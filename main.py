@@ -45,6 +45,7 @@ def main() -> None:
     group.add_argument("--run-now", action="store_true", help="Trigger a Theater Web Run immediately")
     group.add_argument("--schedule", action="store_true", help="Start the daily scheduler")
     group.add_argument("--ticketing-run", action="store_true", help="Query ticketing platforms immediately")
+    group.add_argument("--enrich-venues", action="store_true", help="Find addresses for unmapped venues")
     args = parser.parse_args()
 
     from db.supabase_client import get_supabase_client
@@ -64,6 +65,11 @@ def main() -> None:
         logger.info("Mode: --ticketing-run | Querying ticketing platforms")
         from ticketing.ticketing_agent import TheaterTicketingAgent
         TheaterTicketingAgent().run()
+
+    elif args.enrich_venues:
+        logger.info("Mode: --enrich-venues | Finding addresses for unmapped venues")
+        from agent.venue_enricher import VenueEnricher
+        VenueEnricher(event_type="theater").run()
 
 
 if __name__ == "__main__":
