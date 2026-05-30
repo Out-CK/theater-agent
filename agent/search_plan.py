@@ -26,16 +26,16 @@ Rules:
   "off-off-Broadway shows NYC", "preview week Broadway", "Tony Award nominees running Broadway".
 - Niche queries (~25): Venue-specific or production-specific. Must include dedicated queries
   for each of these venues and organizations:
-    BROADWAY THEATERS: Shubert Theatre NYC, Booth Theatre Broadway, Music Box Theatre NYC,
-      Imperial Theatre Broadway, St. James Theatre NYC, Majestic Theatre Phantom Broadway,
-      Gershwin Theatre NYC, Winter Garden Theatre Broadway, Palace Theatre NYC,
-      Nederlander Theatre Broadway, Richard Rodgers Theatre NYC, Lyric Theatre Broadway,
-      Ambassador Theatre NYC, Al Hirschfeld Theatre Broadway, Brooks Atkinson Theatre NYC,
-      Minskoff Theatre NYC, August Wilson Theatre Broadway, Gerald Schoenfeld Theatre NYC
-    OFF-BROADWAY VENUES: The Public Theater NYC, Playwrights Horizons NYC,
+    BROADWAY THEATERS (~12 queries): Shubert Theatre NYC, Booth Theatre Broadway,
+      Music Box Theatre NYC, Imperial Theatre Broadway, St. James Theatre NYC,
+      Gershwin Theatre NYC, Richard Rodgers Theatre NYC, Majestic Theatre Broadway,
+      Al Hirschfeld Theatre Broadway, Brooks Atkinson Theatre NYC,
+      Minskoff Theatre NYC, August Wilson Theatre Broadway
+    OFF-BROADWAY VENUES (~8 queries): The Public Theater NYC, Playwrights Horizons NYC,
       Manhattan Theatre Club NYC, New York Theatre Workshop, Second Stage Theatre NYC,
-      Atlantic Theater Company NYC, Signature Theatre NYC, Vineyard Theatre NYC,
-      Roundabout Theatre Company NYC, Ars Nova NYC, Soho Rep NYC, Cherry Lane Theatre NYC
+      Atlantic Theater Company NYC, Roundabout Theatre Company NYC, Signature Theatre NYC
+    FORMATS (~5 queries): Broadway musical NYC, new play opening Broadway,
+      limited engagement Broadway, off-Broadway drama NYC, preview week Broadway show
 - Output a JSON array of objects, each with "query" (string) and "query_type" ("broad" or "niche").
 """
 
