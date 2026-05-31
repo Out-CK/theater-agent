@@ -1,9 +1,6 @@
 name: Daily Theater Run
 
-on:
-  schedule:
-    - cron: "0 14 * * *" # 10:00 AM ET (UTC-4)
-  workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
   theater-run:
