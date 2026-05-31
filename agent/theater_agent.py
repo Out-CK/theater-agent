@@ -189,6 +189,11 @@ class TheaterAgent:
         # Step 10 — Insert Entry Batch
         self._step_log("Step 10: Insert Theater Entries")
         try:
+            # Re-initialize ID generator immediately before insert to avoid race conditions
+            # with other agents that may have consumed IDs during the long geocoding step.
+            fresh_id_gen = IDGenerator(self._supabase)
+            for entry in entry_batch:
+                entry.event_entry_id = fresh_id_gen.next()
             rows = [e.model_dump() for e in entry_batch]
             stats["entries_inserted"] = insert_event_entries(rows)
         except Exception as e:
